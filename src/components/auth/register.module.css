@@ -1,0 +1,5 @@
+.formError {
+    color: #d9534f !important;
+    font-size: 13px;
+    min-height: 20px !important;
+}
