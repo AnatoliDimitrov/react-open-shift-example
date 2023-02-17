@@ -4,36 +4,36 @@ export async function jsonRequest(url, method, body, isAuthorized, skipResult) {
     if (method === undefined) {
         method = 'Get';
     }
+    //headers['Referrer Policy'] = 'unsafe-url';
+
+    //method = 'OPTIONS';
 
     if (['post', 'put', 'patch', 'delete'].includes(method.toLowerCase())) {
         headers['Content-Type'] = 'application/json';
     }
 
     if (isAuthorized) {
-        
+        headers['Authorization'] = 'Basic Y3A0YmEtYWRtaW46UEBzc3cwcmQuMjAyMiE='
     }
 
     let options = {
         headers,
         method,
-        //mode: 'no-cors'
+        mode: 'cors'
     };
 
     if (body !== undefined) {
         options.body = JSON.stringify(body);
     }
 
-    let response = await fetch(url, options);
+    // let response = await 
+    fetch(url, options)
+    .then(response => {
+        console.log(response);
+    })
+    .catch(error => {
+        console.log(error);
+    });
 
-    if (!response.ok) {
-        let message = await response.text();
-        throw new Error(`${response.status}: ${response.statusText}\n${message}`);
-    }
-
-    let result = undefined;
-    if (!skipResult) {
-        result = await response.json();
-    }
-
-    return result;
+    //return result;
 }
