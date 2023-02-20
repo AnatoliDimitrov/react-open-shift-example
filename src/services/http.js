@@ -19,7 +19,7 @@ export async function jsonRequest(url, method, body, isAuthorized, skipResult) {
     let options = {
         headers,
         method,
-        mode: 'cors'
+       // mode: 'cors'
     };
 
     if (body !== undefined) {
@@ -35,5 +35,5 @@ export async function jsonRequest(url, method, body, isAuthorized, skipResult) {
         console.log(error);
     });
 
-    //return result;
+   // return result;
 }
