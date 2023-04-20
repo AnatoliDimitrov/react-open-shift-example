@@ -22,19 +22,19 @@ export async function jsonRequest(url, method, body, isAuthorized, skipResult) {
        // mode: 'cors'
     };
 
-     body = {
-        "grant_type":"password",
-        "scope":"openid",
-        "username":"baw-adm",
-        "password":"T0v43P4r0l4t4"
-    };
+    //  body = {
+    //     "grant_type":"password",
+    //     "scope":"openid",
+    //     "username":"baw-adm",
+    //     "password":"T0v43P4r0l4t4"
+    // };
 
     if (body !== undefined) {
         options.body = JSON.stringify(body);
     }
 
     // let response = await 
-    fetch('https://cp-console.apps.ocp.lab.lan/idprovider/v1/auth/identitytoken', options)
+    fetch(url, options)
     .then(response => {
         console.log(response);
     })
