@@ -45,14 +45,14 @@ function App() {
 
     return (
         <AuthContext.Provider value={{ user: auth, userAuth, userLogout }}>
-            <div>
+            {/* <div>
                 <Routes>
                     <Route element={<PageLayout />}>
                         <Route path="/" element={<Home />} />
                     </Route>
                     <Route path="/authentication/login" element={<Login />} />
                 </Routes>
-            </div>
+            </div> */}
 
             <div>
                 <input type="file" onChange={handleFileChange} />
