@@ -31,14 +31,16 @@ function App() {
             .catch(error => {
                 console.error('Error uploading file:', error);
             });
+    };
 
-        const userAuth = (data) => {
-            setAuth(data);
-        };
+    
 
-        const userLogout = () => {
-            setAuth({});
-        };
+    const userAuth = (data) => {
+        setAuth(data);
+    };
+
+    const userLogout = () => {
+        setAuth({});
     };
 
     return (
